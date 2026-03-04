@@ -1,6 +1,5 @@
 import LeftSide from "../main-pages/left-side/LeftSide"
 import Header from "../main-pages/header/Header"
-import AddProject from "../main-pages/add-project/AddProject"
 import { useState } from "react"
 import ProjectList from "../main-pages/project-list/ProjectList"
 
@@ -22,9 +21,7 @@ function ProjectPage({tasks, projects, setprojects, username}) {
                     </div>
                     <ProjectList 
                     tasks={tasks} />
-                    <div>
-                        <AddProject tasks={tasks} projects={projects} setprojects={setprojects} />
-                    </div>
+                    
                </div>
             </div>
         </div>
