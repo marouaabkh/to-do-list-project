@@ -32,6 +32,7 @@ function TaskWin({addtask, setaddtask, tasks, settasks, edittask, setedittask}){
         const projectpriorityvalue = projectpriorityinput.current.value
 
         const isduplicate = tasks.some(task =>
+            task.id !== edittask?.id &&
             task.projectname.toLowerCase() === projectvalue.toLowerCase() &&
             task.testname.toLowerCase() === testvalue.toLowerCase() 
             
@@ -52,7 +53,6 @@ function TaskWin({addtask, setaddtask, tasks, settasks, edittask, setedittask}){
                         date : datevalue,
                         taskpriority : taskpriorityvalue,
                         projectpriority : projectpriorityvalue,
-                        importent : importentvalue
                     } : task
                 )
                 settasks(updatetask)
@@ -66,7 +66,7 @@ function TaskWin({addtask, setaddtask, tasks, settasks, edittask, setedittask}){
                 completed : false,
                 taskpriority : taskpriorityvalue,
                 projectpriority : projectpriorityvalue,
-                importent : false,
+                
             }
             settasks([...tasks, newtask])
             }

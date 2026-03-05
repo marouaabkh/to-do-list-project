@@ -1,5 +1,5 @@
-
-function ProjectList({ tasks}){
+import deleteimg from "./deleteimg.png"
+function ProjectList({ tasks, settasks}){
 
     const groupedproject = tasks.reduce((groups, task)=>{
         const project = task.projectname ;
@@ -9,6 +9,11 @@ function ProjectList({ tasks}){
         groups[project].push(task)
         return groups
     }, {})
+
+    function Deleteproject(projectname){
+        const filterproject = tasks.filter(task => task.projectname !== projectname)
+        settasks(filterproject)
+    }
     
     return(
         <>
@@ -21,7 +26,10 @@ function ProjectList({ tasks}){
                     const percentage = projecttask.length >0 ? (complettask / projecttask.length)*100 : 0
                     return(
                         <div key={projectname} className={`project-item ${priority}`}>
+                            <div className="projectheader">
                             <h3>{projectname}</h3>
+                            <img className="image" id="img" src={deleteimg} onClick={() => Deleteproject(projectname)}/> 
+                            </div>
                             {percentage < 100 ? <p>Status: In progress </p> : <p>Status: Completed</p>}
                             
                             <p>Progress: </p>

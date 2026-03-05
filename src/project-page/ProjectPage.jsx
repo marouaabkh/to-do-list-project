@@ -3,7 +3,7 @@ import Header from "../main-pages/header/Header"
 import { useState } from "react"
 import ProjectList from "../main-pages/project-list/ProjectList"
 
-function ProjectPage({tasks, projects, setprojects, username}) {
+function ProjectPage({tasks, settasks, projects, setprojects, username}) {
 
     const [completed, setcompleted] = useState("")
     const [total, settotal] = useState("")
@@ -20,7 +20,8 @@ function ProjectPage({tasks, projects, setprojects, username}) {
                         <h5>Welcome back to the work space, we miss you!</h5>
                     </div>
                     <ProjectList 
-                    tasks={tasks} />
+                    tasks={tasks}
+                    settasks={settasks} />
                     
                </div>
             </div>

@@ -25,6 +25,7 @@ function App() {
             <Route path='/projectpage' element={
                 <ProjectPage 
                 tasks={tasks} 
+                settasks={settasks}
                 projects={projects} 
                 setprojects={setprojects} 
                 username={username} />}/>
